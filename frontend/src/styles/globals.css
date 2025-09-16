@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-rich-black text-off-white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-12 sm:py-16 md:py-20;
+  }
+
+  .card {
+    @apply bg-opacity-10 bg-white backdrop-blur-sm backdrop-filter 
+           border border-white border-opacity-10 rounded-2xl 
+           shadow-card transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover transform -translate-y-1;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300
+           transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 
+           focus:ring-offset-2 focus:ring-offset-rich-black;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-gradient text-white 
+           hover:shadow-lg hover:shadow-primary/20;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent border-2 border-secondary text-secondary
+           hover:bg-secondary hover:bg-opacity-10;
+  }
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  @apply fixed pointer-events-none z-50 rounded-full mix-blend-difference;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+.cursor-trail {
+  @apply fixed pointer-events-none z-40 rounded-full bg-white bg-opacity-30;
+  width: 10px;
+  height: 10px;
+}
